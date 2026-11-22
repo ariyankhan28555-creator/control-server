@@ -1,0 +1,23 @@
+{
+  "name": "bypass-ai-pro",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A self-hosted, multi-provider AI assistant with voice, web research and a premium web interface.",
+  "type": "module",
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "control": "node control.js",
+    "dev": "node --watch server.js",
+    "check": "node --check server.js && node --check control.js && node --check config/config.js && node --check config/settings.js && node --check middleware/rateLimiter.js && node --check middleware/errorHandler.js && node --check middleware/controlAuth.js && node --check utils/validation.js && node --check utils/errors.js && node --check services/providers/base.js && node --check services/providers/groq.js && node --check services/providers/gemini.js && node --check services/providers/deepseek.js && node --check services/providers/openrouter.js && node --check services/providers/index.js && node --check services/aiService.js && node --check services/searchService.js && node --check services/ttsService.js && node --check routes/health.js && node --check routes/config.js && node --check routes/chat.js && node --check routes/search.js && node --check routes/tts.js && node --check routes/system.js && node --check public/app.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0"
+  }
+}
